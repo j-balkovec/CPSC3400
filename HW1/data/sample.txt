@@ -1,0 +1,12 @@
+These words should never appear in computer error messages:
+exception
+socket
+listener
+code
+receiver
+thread
+process
+unknown
+trap
+protocol
+NULL
