@@ -32,7 +32,7 @@ Due: Wed, Jan 17th [22:00]
 Brief: Implementation of functions to process two-letter pairs in a given text file, 
        counting their occurrences and performing additional processing.
        
-Env: Python 3.11.2 64-bit
+Enviroment: Python 3.11.2 64-bit
 Pckg Manager on cs1: yum
 Submission Dir: /home/fac/bdiazacosta/submit/cpsc3400/hw1_submit
 """
