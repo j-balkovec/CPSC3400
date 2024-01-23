@@ -417,22 +417,7 @@ def createTimeList(input_file: str) -> list:
 
     return time_list
 
-'''__todo__
-BUGGY, the results don't match for the 5th Tuple
-If time B is less than A then convert into the future
 
-  Time A: 4:00PM   --> 16:00  
-  Time B: 12:00PM  --> 12:00
-  
-  difference 
-             >>> 16 + x = 24
-                 x = 8
-                 
-             >>> x = 8 + (24 - 12) 
-                 x = 20  
-  
-  difference should be 20 hrs
-'''
 def timeCompareGen(times: list, target: tuple) -> tuple:
     """
     Generates tuples representing the time differences in hours and minutes between each time in the input list
