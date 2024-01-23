@@ -45,7 +45,7 @@ Overview: The output has been redirected to the "actual_output.txt" file, and a 
           The custom defined errors were tested through a unit-test script and with multiple files that should raise those errors
           10/10 tests passed, with the appropriate error being thrown
 
-          Script can be found at
+          Script can be found at @link: "https://github.com/j-balkovec/CPSC3400/blob/master/HW2/test/hw2_test.py"
 """
 
 """__imports__"""
