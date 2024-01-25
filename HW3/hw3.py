@@ -48,6 +48,9 @@ def logger_init() -> logging.Logger:
         at the INFO level and above. It adds a FileHandler to the logger, directing log messages to a
         specified log file.
     """
+    log_directory = os.path.join(os.getcwd(), "logs")
+    os.makedirs(log_directory, exist_ok=True)
+  
     try:
         logger: logging.Logger = logging.getLogger(LOGGER_NAME)
         logger.setLevel(logging.DEBUG)

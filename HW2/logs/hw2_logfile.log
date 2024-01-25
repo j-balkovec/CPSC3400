@@ -1,17 +1,30 @@
-2024-01-23 11:29:21,676 - INFO - [(STATUS) file opened: True]
-2024-01-23 11:29:21,677 - ERROR - [(STATUS) [custom_exception]  File is empty, expected [size > 0], but found size to be: [0]
-]
-Traceback (most recent call last):
-  File "hw2.py", line 665, in main
-    timeList = createTimeList(input_file=filename)
-  File "hw2.py", line 392, in createTimeList
-    raise EmptyFileError(file_size=os.stat(input_file).st_size)
-EmptyFileError: [DEFAULT]
-Stack (most recent call last):
-  File "hw2.py", line 684, in <module>
-    main(filename)
-  File "hw2.py", line 672, in main
-    handle_custom_ab_derived_exceptions(custom_exception)
-  File "hw2.py", line 633, in handle_custom_ab_derived_exceptions
-    stack_info=True) if LOG else None
-2024-01-23 11:29:21,678 - INFO - [(STATUS): garbo collector stats [{'collections': 22, 'collected': 99, 'uncollectable': 0}, {'collections': 2, 'collected': 0, 'uncollectable': 0}, {'collections': 1, 'collected': 0, 'uncollectable': 0}]]
+2024-01-24 21:03:31,288 - INFO - [(STATUS) file opened: True]
+2024-01-24 21:03:31,298 - INFO - [(STATUS) data read: True]
+2024-01-24 21:03:31,298 - INFO - [(STATUS) file closed: True]
+2024-01-24 21:03:31,298 - INFO - [(STATUS) formatted times: ['4:12 PM', '8:23 PM', '4:03 AM', '1:34 AM', '12:48 PM', '4:13 AM', '11:09 AM', '3:12 PM', '4:10 PM']]
+2024-01-24 21:03:31,298 - INFO - [(STATUS) casted from str to int: [(4, 12, 'PM'), (8, 23, 'PM'), (4, 3, 'AM'), (1, 34, 'AM'), (12, 48, 'PM'), (4, 13, 'AM'), (11, 9, 'AM'), (3, 12, 'PM'), (4, 10, 'PM')]]
+2024-01-24 21:03:31,298 - INFO - [(STATUS) latest time: (8, 23, 'PM')]
+2024-01-24 21:03:31,298 - INFO - [(STATUS) casted from str to int: [(4, 12, 'PM'), (8, 23, 'PM'), (4, 3, 'AM'), (1, 34, 'AM'), (12, 48, 'PM'), (4, 13, 'AM'), (11, 9, 'AM'), (3, 12, 'PM'), (4, 10, 'PM')]]
+2024-01-24 21:03:31,298 - INFO - [(STATUS) sorted times: [(1, 34, 'AM'), (4, 3, 'AM'), (4, 13, 'AM'), (11, 9, 'AM'), (12, 48, 'PM'), (3, 12, 'PM'), (4, 10, 'PM'), (4, 12, 'PM'), (8, 23, 'PM')]]
+2024-01-24 21:03:31,298 - INFO - [(STATUS) casted from str to int: [(4, 12, 'PM'), (8, 23, 'PM'), (4, 3, 'AM'), (1, 34, 'AM'), (12, 48, 'PM'), (4, 13, 'AM'), (11, 9, 'AM'), (3, 12, 'PM'), (4, 10, 'PM')]]
+2024-01-24 21:03:31,298 - INFO - [(STATUS) target set: 4:12 PM]
+2024-01-24 21:03:31,298 - INFO - [(STATUS)[for (16, 12, 'PM')] time difference in minutes set: 0]
+2024-01-24 21:03:31,298 - INFO - [(STATUS) time difference set (yielded the following): 0:0]
+2024-01-24 21:03:31,298 - INFO - [(STATUS)[for (20, 23, 'PM')] time difference in minutes set: 251]
+2024-01-24 21:03:31,298 - INFO - [(STATUS) time difference set (yielded the following): 4:11]
+2024-01-24 21:03:31,298 - INFO - [(STATUS)[for (4, 3, 'AM')] time difference in minutes set: -729]
+2024-01-24 21:03:31,298 - INFO - [(STATUS) time difference set (yielded the following): 11:51]
+2024-01-24 21:03:31,298 - INFO - [(STATUS)[for (1, 34, 'AM')] time difference in minutes set: -878]
+2024-01-24 21:03:31,298 - INFO - [(STATUS) time difference set (yielded the following): 9:22]
+2024-01-24 21:03:31,298 - INFO - [(STATUS)[for (12, 48, 'PM')] time difference in minutes set: -204]
+2024-01-24 21:03:31,298 - INFO - [(STATUS) time difference set (yielded the following): 20:36]
+2024-01-24 21:03:31,298 - INFO - [(STATUS)[for (4, 13, 'AM')] time difference in minutes set: -719]
+2024-01-24 21:03:31,298 - INFO - [(STATUS) time difference set (yielded the following): 12:1]
+2024-01-24 21:03:31,298 - INFO - [(STATUS)[for (11, 9, 'AM')] time difference in minutes set: -303]
+2024-01-24 21:03:31,298 - INFO - [(STATUS) time difference set (yielded the following): 18:57]
+2024-01-24 21:03:31,298 - INFO - [(STATUS)[for (15, 12, 'PM')] time difference in minutes set: -60]
+2024-01-24 21:03:31,298 - INFO - [(STATUS) time difference set (yielded the following): 23:0]
+2024-01-24 21:03:31,298 - INFO - [(STATUS)[for (16, 10, 'PM')] time difference in minutes set: -2]
+2024-01-24 21:03:31,298 - INFO - [(STATUS) time difference set (yielded the following): 23:58]
+2024-01-24 21:03:31,298 - INFO - [(STATUS) time differences: [(0, 0), (4, 11), (11, 51), (9, 22), (20, 36), (12, 1), (18, 57), (23, 0), (23, 58)]]
+2024-01-24 21:03:31,298 - INFO - [(STATUS): garbo collector stats [{'collections': 22, 'collected': 99, 'uncollectable': 0}, {'collections': 2, 'collected': 0, 'uncollectable': 0}, {'collections': 0, 'collected': 0, 'uncollectable': 0}]]
