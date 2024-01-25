@@ -50,7 +50,6 @@ htmlcov/
 *.pot
 
 # Django
-*.log
 db.sqlite3
 manage.py
 
