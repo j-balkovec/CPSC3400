@@ -1,6 +1,17 @@
 """
 tree:
-
+.
+├── backup
+│   └── hw3.py~
+├── data
+│   └── sample.txt
+├── hw3.py
+├── logs
+│   └── hw3_logfile.log
+├── output
+│   └── my_out.txt
+└── pdf
+    └── Homework 3.pdf
     
 Course: CPSC 3400
 Author: Jakob Balkovec
