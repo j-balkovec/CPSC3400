@@ -3,7 +3,7 @@
 //  @author: Jakob Balkovec
 //  @instructor: B. Diaz Acosta
 //
-//  @file: hw2.py
+//  @file: hw4.fsx
 //  @due: Mon, Feb 12th [22:00]
 //
 //  @submission_dir: /home/fac/bdiazacosta/submit/cpsc3400/hw4_submit
