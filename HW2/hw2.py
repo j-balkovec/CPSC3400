@@ -422,7 +422,7 @@ def createTimeList(input_file: str) -> list:
     return time_list
 
 
-def timeCompareGen(times: list, target: tuple) -> tuple:
+def timeCompareGen(times: list, target: tuple) -> Any:
     """
     Generates tuples representing the time differences in hours and minutes between each time in the input list
     and the target time.
