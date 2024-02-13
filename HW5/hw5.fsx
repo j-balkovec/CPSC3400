@@ -91,11 +91,15 @@ module ExpressionSimplification =
             let simplifiedExpr1 = simplify expr1
             let simplifiedExpr2 = simplify expr2
             match (simplifiedExpr1, simplifiedExpr2) with
-            | (Const num1, Add (Const num2, expr3))
-            | (Const num1, Sub (Const num2, expr3))
-            | (Add (Const num2, expr3), Const num1) 
-            | (Sub (Const num2, expr3), Const num1) ->
-                if num1 = -num2 then simplify expr3 else Add (simplifiedExpr1, simplifiedExpr2)
+            // | (Const num1, Add (Const num2, expr3))
+            // | (Const num1, Sub (Const num2, expr3))
+            // | (Add (Const num2, expr3), Const num1) 
+            // | (Sub (Const num2, expr3), Const num1) ->
+            //     if num1 = -num2 then simplify expr3 else Add (simplifiedExpr1, simplifiedExpr2)
+            // | _ -> Add (simplifiedExpr1, simplifiedExpr2)
+            | (_, Const 0.0) -> simplifiedExpr1
+            | (Const 0.0, _) -> simplifiedExpr2
+            | (Const num1, Const num2) -> Const (num1 + num2) |> simplify //type missmatch
             | _ -> Add (simplifiedExpr1, simplifiedExpr2)
 
         | Sub (expr1, expr2) when expr1 = expr2 -> Const 0.0
@@ -105,7 +109,7 @@ module ExpressionSimplification =
             match (simplifiedExpr1, simplifiedExpr2) with
             | (_, Const 0.0) -> simplifiedExpr1
             | (Const 0.0, _) -> simplify (Neg(simplifiedExpr2))
-            | (Const num1, Const num2) -> Const (num1 - num2) |> simplify
+            | (Const num1, Const num2) -> Const (num1 - num2) |> simplify //type missmatch
             | _ -> Sub (simplifiedExpr1, simplifiedExpr2)
 
         | Mul (Const 0.0, _) -> Const 0.0
