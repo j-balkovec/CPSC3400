@@ -71,10 +71,8 @@ module ExpressionSimplification =
     //        and merging like terms in addition, subtraction, and multiplication expressions.
     // @bug:
     //
-    // t5 Correct: 9           Actual: --9
-    // t16 Correct: 0          Actual: x-x
-    // t17 Correct: 16         Actual: -5+21
-    // t18 Correct: -(y+3)     Actual: 0-(y+3)
+    // t16 Correct: 0          Actual: x-x -> sub
+    // t17 Correct: 16         Actual: -5+21 -> add
     let rec simplify (expr: Expression) =
         match expr with
         | Const _ -> expr
@@ -82,6 +80,7 @@ module ExpressionSimplification =
         | Y -> expr
         
         | Neg (Neg e) -> simplify e
+        | Neg (Const e) when e < 0.0 -> Const (-e) |> simplify
         | Neg e -> Neg (simplify e)
         | Neg (Const number) -> Const (-number) |> simplify 
         
@@ -141,7 +140,7 @@ module ExpressionSimplification =
     let t15 = Neg (Neg X)                                                                             
     let t16 = Sub (Mul (Const 1.0, X), Add (X, Const 0.0))                                            //fails exp=0 act=x-x
     let t17 = Add (Sub (Const 3.0, Const 8.0), Mul (Const 7.0, Const 3.0))                            //fails exp=16 act=-5+21
-    let t18 = Sub (Sub (Add (Y, Const 3.0), Add (Y, Const 3.0)), Add (Const 0.0, Add (Y, Const 3.0))) //fails exp=-(y+3) act=-(0+(y+3))
+    let t18 = Sub (Sub (Add (Y, Const 3.0), Add (Y, Const 3.0)), Add (Const 0.0, Add (Y, Const 3.0))) 
     let t19 = Sub (Const 0.0, Neg (Mul (Const 1.0, X)))                                               
     let t20 = Mul (Add (X, Const 2.0), Neg (Sub (Mul (Const 2.0, Y), Const 5.0)))
 
