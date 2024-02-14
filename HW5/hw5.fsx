@@ -71,9 +71,9 @@ module ExpressionSimplification =
     //        and merging like terms in addition, subtraction, and multiplication expressions.
     // @bug:
     //
-    // t16 Correct: 0          Actual: x-x -> sub
+    // ***[t16]*** Correct: 0          Actual: x-x -> sub
     // expr: Sub (Mul (Const 1.0, X), Add (X, Const 0.0))
-    // >>> Mul(1, X) -> x
+    // >>> Mul(1, X) -> X
     // >>> Add(X, O) -> X
     // >>> 
     // >>> Sub (X, X)
@@ -88,7 +88,6 @@ module ExpressionSimplification =
         | Neg e -> Neg (simplify e)
         | Neg (Const number) -> Const (-number) |> simplify 
         
-        | Add (expr1, expr2) when expr1 = expr2 -> simplify (Mul(Const 2.0, expr1))
         | Add (expr1, expr2) ->
             let simplifiedExpr1 = simplify expr1
             let simplifiedExpr2 = simplify expr2
@@ -97,15 +96,17 @@ module ExpressionSimplification =
             | (Const 0.0, _) -> simplifiedExpr2
             | (Const num1, Const num2) -> Const (num1 + num2) |> simplify 
             | _ -> Add (simplifiedExpr1, simplifiedExpr2)
-
-        | Sub (expr1, expr2) when expr1 = expr2 -> Const 0.0
+        
         | Sub (expr1, expr2) ->
             let simplifiedExpr1 = simplify expr1
             let simplifiedExpr2 = simplify expr2
+            if simplifiedExpr1 = simplifiedExpr2 then
+                Const 0.0
+            else
             match (simplifiedExpr1, simplifiedExpr2) with
             | (_, Const 0.0) -> simplifiedExpr1
             | (Const 0.0, _) -> simplify (Neg(simplifiedExpr2))
-            | (Const num1, Const num2) -> Const (num1 - num2) |> simplify //type missmatch
+            | (Const num1, Const num2) -> Const (num1 - num2) |> simplify
             | _ -> Sub (simplifiedExpr1, simplifiedExpr2)
 
         | Mul (Const 0.0, _) -> Const 0.0
@@ -137,8 +138,8 @@ module ExpressionSimplification =
     let t13 = Mul (X, Const 1.0)
     let t14 = Mul (Const 1.0, Y)
     let t15 = Neg (Neg X)                                                                             
-    let t16 = Sub (Mul (Const 1.0, X), Add (X, Const 0.0))                                            //fails exp=0 act=x-x
-    let t17 = Add (Sub (Const 3.0, Const 8.0), Mul (Const 7.0, Const 3.0))                            //fails exp=16 act=-5+21
+    let t16 = Sub (Mul (Const 1.0, X), Add (X, Const 0.0))                                            
+    let t17 = Add (Sub (Const 3.0, Const 8.0), Mul (Const 7.0, Const 3.0))                            
     let t18 = Sub (Sub (Add (Y, Const 3.0), Add (Y, Const 3.0)), Add (Const 0.0, Add (Y, Const 3.0))) 
     let t19 = Sub (Const 0.0, Neg (Mul (Const 1.0, X)))                                               
     let t20 = Mul (Add (X, Const 2.0), Neg (Sub (Mul (Const 2.0, Y), Const 5.0)))
@@ -164,4 +165,3 @@ module ExpressionSimplification =
     printfn "t18 Correct: -(y+3)\tActual: %s" (exprToString (simplify t18))
     printfn "t19 Correct: x\t\tActual: %s" (exprToString (simplify t19))
     printfn "t20 Correct: (x+2)*(-((2*y)-5)) Actual: %s" (exprToString (simplify t20))
-
