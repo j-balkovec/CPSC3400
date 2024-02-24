@@ -290,8 +290,6 @@ def test_regex_pattern_d() -> list:
         
     return test_results
 
-#error checking
-#hint types
 def test_results() -> None:
     """
     Runs a series of test functions related to regex patterns and saves the results in a JSON file.

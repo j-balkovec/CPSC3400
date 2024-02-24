@@ -1,12 +1,12 @@
-2024-02-24 13:37:05,980 - INFO - [(PATTERN): ^(?=.*qu)(?=.*zz)[a-zA-Z]*$
-2024-02-24 13:37:05,980 - INFO - [(TEST) test_string: 'quizzical', match: True]
-2024-02-24 13:37:05,980 - INFO - [(TEST) test_string: 'quzziical', match: True]
-2024-02-24 13:37:05,980 - INFO - [(TEST) test_string: 'zzquizzical', match: True]
-2024-02-24 13:37:05,980 - INFO - [(TEST) test_string: 'aaquapizza', match: True]
-2024-02-24 13:37:05,980 - INFO - [(TEST) test_string: 'aquataco', match: False]
-2024-02-24 13:37:05,980 - INFO - [(TEST) test_string: 'quizz1cal', match: False]
-2024-02-24 13:37:05,980 - INFO - [(TEST) test_string: 'QUIZZICAL', match: False]
-2024-02-24 13:37:05,980 - INFO - [(TEST_RESULTS) results:
+2024-02-24 13:40:47,827 - INFO - [(PATTERN): ^(?=.*qu)(?=.*zz)[a-zA-Z]*$
+2024-02-24 13:40:47,828 - INFO - [(TEST) test_string: 'quizzical', match: True]
+2024-02-24 13:40:47,828 - INFO - [(TEST) test_string: 'quzziical', match: True]
+2024-02-24 13:40:47,828 - INFO - [(TEST) test_string: 'zzquizzical', match: True]
+2024-02-24 13:40:47,828 - INFO - [(TEST) test_string: 'aaquapizza', match: True]
+2024-02-24 13:40:47,828 - INFO - [(TEST) test_string: 'aquataco', match: False]
+2024-02-24 13:40:47,828 - INFO - [(TEST) test_string: 'quizz1cal', match: False]
+2024-02-24 13:40:47,828 - INFO - [(TEST) test_string: 'QUIZZICAL', match: False]
+2024-02-24 13:40:47,828 - INFO - [(TEST_RESULTS) results:
 [
     {
         "string": "quizzical",
@@ -37,16 +37,16 @@
         "match": false
     }
 ]]
-2024-02-24 13:37:05,980 - INFO - [(PATTERN): ^\(\d{3}\)\s?\d{3}-\d{4}$|^\d{3}-\d{3}-\d{4}$
-2024-02-24 13:37:05,981 - INFO - [(TEST) test_string: '(555)123-4567', match: True]
-2024-02-24 13:37:05,981 - INFO - [(TEST) test_string: '(555) 123-4567', match: True]
-2024-02-24 13:37:05,981 - INFO - [(TEST) test_string: '555-123-4567', match: True]
-2024-02-24 13:37:05,981 - INFO - [(TEST) test_string: '555123-4567', match: False]
-2024-02-24 13:37:05,981 - INFO - [(TEST) test_string: '555 123-4567', match: False]
-2024-02-24 13:37:05,981 - INFO - [(TEST) test_string: '555-1234-567', match: False]
-2024-02-24 13:37:05,981 - INFO - [(TEST) test_string: '555-123-456', match: False]
-2024-02-24 13:37:05,981 - INFO - [(TEST) test_string: 'abc-def-ghij', match: False]
-2024-02-24 13:37:05,981 - INFO - [(TEST_RESULTS) results:
+2024-02-24 13:40:47,828 - INFO - [(PATTERN): ^\(\d{3}\)\s?\d{3}-\d{4}$|^\d{3}-\d{3}-\d{4}$
+2024-02-24 13:40:47,828 - INFO - [(TEST) test_string: '(555)123-4567', match: True]
+2024-02-24 13:40:47,828 - INFO - [(TEST) test_string: '(555) 123-4567', match: True]
+2024-02-24 13:40:47,828 - INFO - [(TEST) test_string: '555-123-4567', match: True]
+2024-02-24 13:40:47,828 - INFO - [(TEST) test_string: '555123-4567', match: False]
+2024-02-24 13:40:47,828 - INFO - [(TEST) test_string: '555 123-4567', match: False]
+2024-02-24 13:40:47,828 - INFO - [(TEST) test_string: '555-1234-567', match: False]
+2024-02-24 13:40:47,828 - INFO - [(TEST) test_string: '555-123-456', match: False]
+2024-02-24 13:40:47,828 - INFO - [(TEST) test_string: 'abc-def-ghij', match: False]
+2024-02-24 13:40:47,828 - INFO - [(TEST_RESULTS) results:
 [
     {
         "string": "(555)123-4567",
@@ -81,21 +81,21 @@
         "match": false
     }
 ]]
-2024-02-24 13:37:05,981 - INFO - [(PATTERN): ^\[(?:[1-9]\d*|0)(?:\s*;\s*(?:[1-9]\d*|0))*]$
-2024-02-24 13:37:05,981 - INFO - [(TEST) test_string: '[1]', match: True]
-2024-02-24 13:37:05,981 - INFO - [(TEST) test_string: '[1; 4; 6; 12; 3; 70]', match: True]
-2024-02-24 13:37:05,981 - INFO - [(TEST) test_string: '[1;4;6;12;3;70]', match: True]
-2024-02-24 13:37:05,981 - INFO - [(TEST) test_string: '[0; 10; 20; 30; 40; 50]', match: True]
-2024-02-24 13:37:05,981 - INFO - [(TEST) test_string: '[1 ; 4 ; 6 ; 12 ; 3 ; 70]', match: True]
-2024-02-24 13:37:05,981 - INFO - [(TEST) test_string: '[1;                 4]', match: True]
-2024-02-24 13:37:05,981 - INFO - [(TEST) test_string: '[1; 4; 6; 12; 3; 70;]', match: False]
-2024-02-24 13:37:05,981 - INFO - [(TEST) test_string: '[1; 4; 06; 12; 3; 70]', match: False]
-2024-02-24 13:37:05,981 - INFO - [(TEST) test_string: '[1; 4; 6; 12; 3; abc]', match: False]
-2024-02-24 13:37:05,981 - INFO - [(TEST) test_string: '[]', match: False]
-2024-02-24 13:37:05,981 - INFO - [(TEST) test_string: '[1; 2; 3; 4]  ', match: False]
-2024-02-24 13:37:05,981 - INFO - [(TEST) test_string: '[string; int; 4]', match: False]
-2024-02-24 13:37:05,981 - INFO - [(TEST) test_string: '[1, 2, 3, 4, 5]', match: False]
-2024-02-24 13:37:05,981 - INFO - [(TEST_RESULTS) results:
+2024-02-24 13:40:47,828 - INFO - [(PATTERN): ^\[(?:[1-9]\d*|0)(?:\s*;\s*(?:[1-9]\d*|0))*]$
+2024-02-24 13:40:47,829 - INFO - [(TEST) test_string: '[1]', match: True]
+2024-02-24 13:40:47,829 - INFO - [(TEST) test_string: '[1; 4; 6; 12; 3; 70]', match: True]
+2024-02-24 13:40:47,829 - INFO - [(TEST) test_string: '[1;4;6;12;3;70]', match: True]
+2024-02-24 13:40:47,829 - INFO - [(TEST) test_string: '[0; 10; 20; 30; 40; 50]', match: True]
+2024-02-24 13:40:47,829 - INFO - [(TEST) test_string: '[1 ; 4 ; 6 ; 12 ; 3 ; 70]', match: True]
+2024-02-24 13:40:47,829 - INFO - [(TEST) test_string: '[1;                 4]', match: True]
+2024-02-24 13:40:47,829 - INFO - [(TEST) test_string: '[1; 4; 6; 12; 3; 70;]', match: False]
+2024-02-24 13:40:47,829 - INFO - [(TEST) test_string: '[1; 4; 06; 12; 3; 70]', match: False]
+2024-02-24 13:40:47,829 - INFO - [(TEST) test_string: '[1; 4; 6; 12; 3; abc]', match: False]
+2024-02-24 13:40:47,829 - INFO - [(TEST) test_string: '[]', match: False]
+2024-02-24 13:40:47,829 - INFO - [(TEST) test_string: '[1; 2; 3; 4]  ', match: False]
+2024-02-24 13:40:47,829 - INFO - [(TEST) test_string: '[string; int; 4]', match: False]
+2024-02-24 13:40:47,829 - INFO - [(TEST) test_string: '[1, 2, 3, 4, 5]', match: False]
+2024-02-24 13:40:47,829 - INFO - [(TEST_RESULTS) results:
 [
     {
         "string": "[1]",
@@ -150,35 +150,35 @@
         "match": false
     }
 ]]
-2024-02-24 13:37:05,981 - INFO - [(PATTERN): \s*([^?]+?)\s*\?\s*([^:]+?)\s*:\s*([^?]+?)\s*$
-2024-02-24 13:37:05,982 - INFO - 
+2024-02-24 13:40:47,829 - INFO - [(PATTERN): \s*([^?]+?)\s*\?\s*([^:]+?)\s*:\s*([^?]+?)\s*$
+2024-02-24 13:40:47,829 - INFO - 
 [(TEST) expression: 'a < b ? x : 3 + y', expected_result:  x if a < b else 3 + y, actual_result:  x if a < b else 3 + y, match: True
 ]
-2024-02-24 13:37:05,982 - INFO - [(PATTERN): \s*([^?]+?)\s*\?\s*([^:]+?)\s*:\s*([^?]+?)\s*$
-2024-02-24 13:37:05,982 - INFO - 
+2024-02-24 13:40:47,830 - INFO - [(PATTERN): \s*([^?]+?)\s*\?\s*([^:]+?)\s*:\s*([^?]+?)\s*$
+2024-02-24 13:40:47,830 - INFO - 
 [(TEST) expression: '1 > 2 ? 'a' : 'b'', expected_result:  'a' if 1 > 2 else 'b', actual_result:  'a' if 1 > 2 else 'b', match: True
 ]
-2024-02-24 13:37:05,982 - INFO - [(PATTERN): \s*([^?]+?)\s*\?\s*([^:]+?)\s*:\s*([^?]+?)\s*$
-2024-02-24 13:37:05,982 - INFO - 
+2024-02-24 13:40:47,830 - INFO - [(PATTERN): \s*([^?]+?)\s*\?\s*([^:]+?)\s*:\s*([^?]+?)\s*$
+2024-02-24 13:40:47,830 - INFO - 
 [(TEST) expression: 'condition ? result1 : result2', expected_result:  result1 if condition else result2, actual_result:  result1 if condition else result2, match: True
 ]
-2024-02-24 13:37:05,982 - INFO - [(PATTERN): \s*([^?]+?)\s*\?\s*([^:]+?)\s*:\s*([^?]+?)\s*$
-2024-02-24 13:37:05,982 - INFO - 
+2024-02-24 13:40:47,830 - INFO - [(PATTERN): \s*([^?]+?)\s*\?\s*([^:]+?)\s*:\s*([^?]+?)\s*$
+2024-02-24 13:40:47,830 - INFO - 
 [(TEST) expression: 'foo ? 'bar' : 'baz'', expected_result:  'bar' if foo else 'baz', actual_result:  'bar' if foo else 'baz', match: True
 ]
-2024-02-24 13:37:05,982 - INFO - [(PATTERN): \s*([^?]+?)\s*\?\s*([^:]+?)\s*:\s*([^?]+?)\s*$
-2024-02-24 13:37:05,982 - INFO - 
+2024-02-24 13:40:47,830 - INFO - [(PATTERN): \s*([^?]+?)\s*\?\s*([^:]+?)\s*:\s*([^?]+?)\s*$
+2024-02-24 13:40:47,830 - INFO - 
 [(TEST) expression: 'a == b ? 1 : 2', expected_result:  1 if a == b else 2, actual_result:  1 if a == b else 2, match: True
 ]
-2024-02-24 13:37:05,982 - INFO - [(PATTERN): \s*([^?]+?)\s*\?\s*([^:]+?)\s*:\s*([^?]+?)\s*$
-2024-02-24 13:37:05,982 - INFO - 
+2024-02-24 13:40:47,830 - INFO - [(PATTERN): \s*([^?]+?)\s*\?\s*([^:]+?)\s*:\s*([^?]+?)\s*$
+2024-02-24 13:40:47,830 - INFO - 
 [(TEST) expression: '(a + b) < (c - d) ? x : y', expected_result:  x if (a + b) < (c - d) else y, actual_result:  x if (a + b) < (c - d) else y, match: True
 ]
-2024-02-24 13:37:05,982 - INFO - [(PATTERN): \s*([^?]+?)\s*\?\s*([^:]+?)\s*:\s*([^?]+?)\s*$
-2024-02-24 13:37:05,982 - INFO - 
+2024-02-24 13:40:47,830 - INFO - [(PATTERN): \s*([^?]+?)\s*\?\s*([^:]+?)\s*:\s*([^?]+?)\s*$
+2024-02-24 13:40:47,830 - INFO - 
 [(TEST) expression: 'x > 0 ? 1 : 0', expected_result:  1 if x > 0 else 0, actual_result:  1 if x > 0 else 0, match: True
 ]
-2024-02-24 13:37:05,982 - INFO - [(TEST_RESULTS) results:
+2024-02-24 13:40:47,830 - INFO - [(TEST_RESULTS) results:
 [
     {
         "expression": "a < b ? x : 3 + y",
@@ -223,5 +223,5 @@
         "match": true
     }
 ]]
-2024-02-24 13:37:05,983 - INFO - [(TEST) test results written to the file: /home/st/jbalkovec/3400CPSC/HW6/tests/test_output.json]
-2024-02-24 13:37:05,984 - INFO - [(STATUS): (gc module) garbo collector stats [{'collections': 24, 'collected': 413, 'uncollectable': 0}, {'collections': 2, 'collected': 0, 'uncollectable': 0}, {'collections': 1, 'collected': 76, 'uncollectable': 0}]]
+2024-02-24 13:40:47,830 - INFO - [(TEST) test results written to the file: /home/st/jbalkovec/3400CPSC/HW6/tests/test_output.json]
+2024-02-24 13:40:47,832 - INFO - [(STATUS): (gc module) garbo collector stats [{'collections': 24, 'collected': 413, 'uncollectable': 0}, {'collections': 2, 'collected': 0, 'uncollectable': 0}, {'collections': 1, 'collected': 76, 'uncollectable': 0}]]
