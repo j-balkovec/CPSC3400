@@ -195,7 +195,7 @@ def f_sharp_list() -> Pattern:
 
 def test_regex_pattern_c() -> list:
     """
-    Brief: 
+    Brief: /home/st/jbalkovec/3400CPSC/HW6/pdf
         Tests the compiled regular expression pattern returned by f_sharp_list() 
         against a list of test strings and returns a list of test results.
         
