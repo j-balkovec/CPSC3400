@@ -1,0 +1,7 @@
+ABCDDDACA 
+ABA       
+CABADB     
+ABCAAACDCB 
+CCA
+ABD
+CC
