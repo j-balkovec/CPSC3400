@@ -1,0 +1,2 @@
+S -> E
+E -> eEh | fEh | g
