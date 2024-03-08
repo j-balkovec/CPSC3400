@@ -344,10 +344,45 @@ def clear_file(file_path: str) -> None:
 
     return None
 
+# As discussed over email, I attached the initial skeleton
+
+a = re.compile(r"^(?=.*qu)(?=.*zz)[a-zA-Z]*$")
+
+b = re.compile(r"^\(\d{3}\)\s?\d{3}-\d{4}$|^\d{3}-\d{3}-\d{4}$")
+
+c = re.compile(r"^\[(?:[1-9]\d*|0)(?:\s*;\s*(?:[1-9]\d*|0))*]$")
+
+d = re.compile(r"\s*([^?]+?)\s*\?\s*([^:]+?)\s*:\s*([^?]+?)\s*$")
+subStr = r' \2 if \1 else \3'
+
+
+# TESTS
+
+print("----Part a tests that match:")
+print(a.search("aquapizza"))
+
+print("----Part a tests that do not match:")
+print(a.search("aquataco"))
+
+print("----Part b tests that match:")
+print(b.search("(555) 123-4567"))
+
+print("----Part b tests that do not match:")
+print(b.search("(555)-123-4567"))
+
+print("----Part c tests that match:")
+print(c.search("[1; 4; 6; 12; 3; 70]"))
+
+print("----Part c tests that do not match:")
+print(c.search("[1; 4; hi; 12; 3; 70]"))
+
+print("----Part d tests:")
+print(d.sub(subStr, "a < b ? x : 3 + y"))
+
 if __name__ == "__main__":
     clear_file(LOG_FILE_PATH)
     clear_file(TEST_FILE_PATH)
-    test_results()
+    #test_results()
     
     gc.collect()
     logger.info(f"[(STATUS): (gc module) garbo collector stats {gc.get_stats()}]") if LOG else None
